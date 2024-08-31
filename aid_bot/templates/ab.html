@@ -42,7 +42,13 @@
             const chatWindow = document.getElementById('chat-window');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message';
-            messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+
+            if (sender=="You"){
+                messageDiv.className += ' user';
+            }else{
+                messageDiv.className += ' bot'
+            }
+            messageDiv.innerHTML = `${message}`;
             chatWindow.appendChild(messageDiv);
         }
 
@@ -61,6 +67,32 @@
             return cookieValue;
         }
     </script>
+    <style>
+    #chat-window {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message {
+        margin: 5px 10px;
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 60%;
+        word-wrap: break-word;
+    }
+
+    .message.user {
+        align-self: flex-end;
+        background-color: #dcf8c6;  /* Light green background for user messages */
+        text-align: right;
+    }
+
+    .message.bot {
+        align-self: flex-start;
+        background-color: #f1f1f1;  /* Light grey background for bot messages */
+        text-align: left;
+    }
+    </style>
     <h1>Chat with the Bot</h1>
     <div id="chat-window" style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll;">
         <!-- Chat messages will appear here -->
