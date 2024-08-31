@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-def aid_bot(request):
-    return render(request ,'ab.html')
+def home(request):
+    return render(request, 'home.html')

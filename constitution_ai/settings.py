@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'traffic',
+    'aid_bot',
+    'article_hub',
+    'quiz_game',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,6 +122,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Additional directories where Django will look for static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # This points to a directory named "static" in your project root
+]
+
+# Directory where static files will be collected (for deployment)
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
