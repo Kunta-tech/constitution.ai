@@ -21,6 +21,7 @@ from traffic.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('aid_bot', ab.aid_bot, name='aid_bot'),
+    path('aid_bot/', ab.page, name='aid_bot'),
+    path('aid_bot/chat/', ab.chatbot_response, name='chatbot_response'),
     path('', home, name='home')
 ]

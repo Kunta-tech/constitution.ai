@@ -2,5 +2,71 @@
 {% block title %}Aid Bot{% endblock title %}
 
 {% block content %}
-<textarea placeholder="Write Here"></textarea>
+    <script>
+        async function sendMessage(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+
+            const inputField = document.getElementById('sentence');
+            const message = inputField.value;
+
+            // Clear the input field after submission
+            inputField.value = '';
+
+            // Display the user's message in the chat window
+            addMessageToChatWindow('You', message);
+
+            // Send the message to the backend
+            try {
+                const response = await fetch('chat/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCookie('csrftoken'),
+                    },
+                    body: JSON.stringify({ sentence: message })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    addMessageToChatWindow('Bot', data.response);
+                } else {
+                    addMessageToChatWindow('Error', 'Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                addMessageToChatWindow('Error', error);
+            }
+        }
+
+        function addMessageToChatWindow(sender, message) {
+            const chatWindow = document.getElementById('chat-window');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatWindow.appendChild(messageDiv);
+        }
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+    <h1>Chat with the Bot</h1>
+    <div id="chat-window" style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll;">
+        <!-- Chat messages will appear here -->
+    </div>
+    <form onsubmit="sendMessage(event)">
+        <textarea id="sentence" placeholder="Type your message here..." rows="3" cols="40"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
 {% endblock content %}

@@ -19,4 +19,5 @@ python manage.py runserver
 
 ## Store Static Files
 [static/css] for css
+
 [static/js] for js
