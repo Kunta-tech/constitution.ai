@@ -10,7 +10,6 @@ def chatbot_response(request):
         try:
             # Parse the JSON data from the request body
             data = json.loads(request.body)
-            print(f"Received data: {data}")
             sentence = data.get('sentence')  # Extract the specific field
 
             if sentence:

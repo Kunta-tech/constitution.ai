@@ -8,9 +8,16 @@ There are 3 main parts-
 - quiz_game
 
 ### requirements
+Pip packages
+```bash
+pip install django python-dotenv google.generativeai markdown
 ```
-pip install django
+
+use .env file to store Gemini API
+```bash
+GOOGLE_API_KEY="<your API key>"
 ```
+
 
 ### Run server
 ```
@@ -18,6 +25,5 @@ python manage.py runserver
 ```
 
 ## Store Static Files
-(static/css)[] for css
-
-(static/js)[] for js
+- Store css[Here](/static/css)
+- Store js[Here](/static/js)

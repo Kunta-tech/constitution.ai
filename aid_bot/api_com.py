@@ -1,5 +1,6 @@
 import google.generativeai as genai
 import os
+import markdown
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel('gemini-pro')
@@ -11,4 +12,5 @@ def get_api_response(query: str):
 
     for part in response:
         ans += part.text
-    return ans
+    
+    return markdown.markdown(ans)
