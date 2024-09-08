@@ -18,6 +18,6 @@ python manage.py runserver
 ```
 
 ## Store Static Files
-(hello)[static/css] for css
+<static/css> for css
 
 (static/js)[] for js
