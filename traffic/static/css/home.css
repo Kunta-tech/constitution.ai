@@ -44,11 +44,14 @@ body{
     padding: 8px 14px;
     background-color: #f3f0e7;
     border-radius: 50px;
-    border: 3px solid #766C40;   
-    width: 35%;
-    margin-top: 16px; 
+    border: 3px solid #766C40;
+    width: 80%; /* More flexible for smaller screens */
+    max-width: 600px; /* Limit width for larger screens */
+    margin-top: 16px;
     margin-left: 17px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
+
 .dropdown {
     margin-right: 16px;
     display: flex;
@@ -56,6 +59,7 @@ body{
     position: relative;
     padding-left: 16px;
 }
+
 .dropdown label {
     margin-right: 5px;
     font-size: 14px;
@@ -69,7 +73,6 @@ body{
     background-color: #ffffff00;
     font-size: 14px;
     color: #333;
-    
 }
 
 .search-btn {
@@ -84,4 +87,65 @@ body{
     cursor: pointer;
     color: white;
     font-size: 18px;
+    margin-left: auto; /* Moves button to the right */
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: 90%; /* Increase width on smaller screens */
+        margin-left: auto;
+        margin-right: auto; /* Center the search bar */
+    }
+
+    .dropdown {
+        margin-right: 8px; /* Reduce space */
+        padding-left: 8px;
+    }
+
+    .search-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        width: 95%; /* Full width on very small screens */
+        padding: 6px 10px; /* Reduce padding */
+    }
+
+    .dropdown label {
+        font-size: 12px; /* Adjust text size */
+    }
+
+    .dropdown select {
+        font-size: 12px;
+        padding: 2px 8px;
+    }
+
+    .search-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
+
+.logo{
+    width: 128px;
+height: 128px;
+top: 10px;
+left: 50px;
+gap: 0px;
+opacity: 0px;
+
+}
+kh{
+    width: Fixed (165px)px;
+height: Hug (681.1px)px;
+top: 200px;
+left: 32px;
+gap: 48px;
+opacity: 0px;
+
 }
