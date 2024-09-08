@@ -1,8 +1,59 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock title %}
 
+
 {% block content %}
-Hello World!!
-<br>
-<a href="./aid_bot">Go to AID BOT</a>
+<div id="main">
+    <div class="left"></div>
+    <div class="right">
+        <div class="head">
+            <div class="title">
+            <p class="name"> Hi, Alex </p>
+            <p class="sub_title">Discover, Learn, and Live the Indian Constitution</p>
+            </div>
+
+        </div>
+
+        <div class="line"></div>
+        <div class="sub_head">
+            <p class="sub_title">Explore <a class="highlight" >Articles</a>, Discover <a class="highlight">Rights</a></p>
+        </div>
+
+        <!-- search bar -->
+
+        <div class="search-bar">
+            <div class="dropdown">
+                <label for="part-no">Part No.</label>
+                <select id="part-no">
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                </select>
+            </div>
+    
+            <div class="dropdown">
+                <label for="article-no">Article No.</label>
+                <select id="article-no">
+                    <option value="324">324</option>
+                    <option value="325">325</option>
+                    <option value="326">326</option>
+                </select>
+            </div>
+    
+            <div class="dropdown">
+                <label for="category">Categories</label>
+                <select id="category">
+                    <option value="traffic">Traffic</option>
+                    <option value="security">Security</option>
+                    <option value="law">Law</option>
+                </select>
+            </div>
+    
+            <button class="search-btn">
+                <i class="search-icon">🔍</i>
+            </button>
+        </div>
+    </div>
+    </div>
+
 {% endblock content %}
