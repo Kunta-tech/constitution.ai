@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="/static/css/home.css">
 </head>
 <body>
-    {% block content %}{% endblock content %}
+    <div id="main">
+   
+    <div class="left">
+        
+            
+            <nav >
+            <img src="/static/css/images/logo.svg" alt="Constitution.ai" class="logo" > <br>
+        <a href="/">
+            <img src="/static/css/images/knowledgehub.svg" alt="knowledge hub" class="kh"> <br>
+           <label> knowledge hub</label> <br>
+        </a>
+        <a href="{% url 'aid_bot' %}">
+            <img src="/static/css/images/Legal_aid_-bot.svg" alt="Legal aid bot" class="lb"> <br>
+            <label> Legal aid bot</label> <br>
+        </a>
+        <a href="/">
+            <img src="/static/css/images/Mega_quiz.svg" alt="knowledge hub" class="mq"><br>
+           <label> Mega quiz</label> <br>
+        </a>
+        <a href="">
+            <img src="/static/css/images/Hot_news.svg" alt="knowledge hub" class="hn"> <br>
+           <label>Hot News</label> <br>
+        </a>
+        </nav>
+    </div>
+    <div class="right">
+        {% block content %}{% endblock content %}
+    </div>
+</div>
+    
 </body>
 </html>
