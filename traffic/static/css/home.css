@@ -37,6 +37,21 @@ body{
 .highlight{
     color: #65090A;
 }
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
 /* search bar */
 .search-bar {
     display: flex;

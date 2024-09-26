@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %} | Constitution.ai</title>
-    
     <link rel="stylesheet" href="/static/css/home.css">
+    {% block links %}{% endblock links %}
 </head>
 <body>
     <div id="main">
@@ -14,22 +14,25 @@
         
             
             <nav >
-            <img src="/static/css/images/logo.svg" alt="Constitution.ai" class="logo" > <br>
         <a href="/">
-            <img src="/static/css/images/knowledgehub.svg" alt="knowledge hub" class="kh"> <br>
-           <label> knowledge hub</label> <br>
+            <img src="/static/images/logo.svg" alt="Constitution.ai" class="logo" > <br>
         </a>
-        <a href="{% url 'aid_bot' %}">
-            <img src="/static/css/images/Legal_aid_-bot.svg" alt="Legal aid bot" class="lb"> <br>
-            <label> Legal aid bot</label> <br>
+            
+        <a href="/">
+            <img src="/static/images/knowledgehub.svg" alt="knowledge hub" class="kh">
+           <label> knowledge hub</label>
+        </a>
+        <a href="{% url 'aid_bot' %}" id="link2aid">
+            <img src="/static/images/Legal_aid_-bot.svg" alt="Legal aid bot" class="lb">
+            <label> Legal aid bot</label>
         </a>
         <a href="/">
-            <img src="/static/css/images/Mega_quiz.svg" alt="knowledge hub" class="mq"><br>
-           <label> Mega quiz</label> <br>
+            <img src="/static/images/Mega_quiz.svg" alt="knowledge hub" class="mq">
+           <label> Mega quiz</label>
         </a>
-        <a href="">
-            <img src="/static/css/images/Hot_news.svg" alt="knowledge hub" class="hn"> <br>
-           <label>Hot News</label> <br>
+        <a href="/">
+            <img src="/static/images/Hot_news.svg" alt="knowledge hub" class="hn">
+           <label>Hot News</label>
         </a>
         </nav>
     </div>
