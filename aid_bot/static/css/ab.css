@@ -1,0 +1,32 @@
+.right{
+    padding: 20px;
+}
+#link2aid{
+    background-color: #736c4c;
+    border: 2px solid;
+    border-radius: 9px;
+}
+    #chat-window {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message {
+        margin: 5px 10px;
+        padding: 10px;
+        border-radius: 10px;
+        width: 50%;
+        max-width: 60%;
+        word-wrap: break-word;
+    }
+    .message.user {
+        align-self: flex-end;
+        background-color: #dcf8c6;  /* Light green background for user messages */
+        text-align: right;
+    }
+
+    .message.bot {
+        align-self: flex-start;
+        background-color: #f1f1f1;  /* Light grey background for bot messages */
+        text-align: left;
+    }
